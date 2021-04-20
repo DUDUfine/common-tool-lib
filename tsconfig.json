@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "es6", "es7"]
+  },
+  "include": [
+    "util/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    // "**/*.spec.ts"
+  ],
+}
