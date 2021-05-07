@@ -38,9 +38,13 @@ export const toTypeString = (value: unknown): string =>
   objectToString.call(value)
 
 export const isIntegerKey = (key: unknown) =>
-  isString(key) &&
+  typeof key === 'string' &&
   key !== 'NaN' &&
   key[0] !== '-' &&
   '' + parseInt(key, 10) === key
 
-
+// 字符串或数字是否位正整数,maxNumber参数位最大值限制
+export const isPositiveNum = (value: number|string, maxNumber) => {
+  let positiveNumReg = /^[0-9]*[1-9][0-9]*$/
+  return !isNaN(+value) && positiveNumReg.test(value.toString()) && (!maxNumber || +value < maxNumber);
+}
